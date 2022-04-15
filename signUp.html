@@ -1,0 +1,106 @@
+<!-- css custom -->
+<link rel="stylesheet" href="css/signUp.css">
+<!-- form signup -->
+<div class="signup">
+    <div class="logo"> <img src="images/banner/img_avatar2.png" alt=""> </div>
+    <div class="text-center mt-4 name">Đăng ký tài khoản </div>
+    <div class="row">
+        <form class="p-3 mt-2" name="signup">
+            <div class="row p-2">
+
+                <div class="form-field d-flex align-items-center col-sm-5 ">
+                    <span class="fa fa-user"></span>
+                    <input type="text" name="username" ng-pattern="/^[a-zA-Z0-9-]*$/" ng-model="username" id="userName" placeholder="Tài khoản">
+                </div>
+
+                <div class="col-sm-2"></div>
+
+                <div class="form-field d-flex align-items-center col-sm-5 ">
+                    <span class="fa fa-key"></span>
+                    <input type="password" name="password" ng-model="password" id="pwd" placeholder="Mật khẩu">
+                </div>
+
+                <div class="row">
+                    <div ng-show="signup.username.$invalid" class="text-danger font-italic col-sm-6 ">
+                        <span ng-if="signup.username.$touched">Nhập sai định dạng!</span>
+                        <span ng-if="signup.username.$untouched">Vui lòng nhập tài khoản!</span>
+                    </div>
+                    <div ng-show="signup.password.$invalid" class="text-danger font-italic col-sm-6 ">
+                        <span>Vui lòng nhập mật khẩu!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-field d-flex align-items-center">
+                <span class="fa fa-user-circle"></span>
+                <input type="text" name="fullname" id="hoten" pattern="^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$" ng-model="fullname" placeholder="Họ tên">
+            </div>
+            <div ng-show="signup.fullname.$invalid" class="text-danger font-italic  ">
+                <span ng-if="signup.fullname.$touched">Nhập sai định dạng!</span>
+                <span ng-if="signup.fullname.$untouched">Vui lòng nhập họ và tên!</span>
+            </div>
+
+            <div class="form-field d-flex align-items-center">
+                <span class="fa fa-at"></span>
+                <input type="email" name="email" id="email" ng-model="email" placeholder="Email">
+            </div>
+            <div ng-show="signup.email.$invalid" class="text-danger font-italic  ">
+                <span ng-if="signup.email.$touched">Nhập sai định dạng!</span>
+                <span ng-if="signup.email.$untouched">Vui lòng email!</span>
+            </div>
+
+            <div class="row p-3">
+                <div class="form-check col-sm-4">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" ng-model="gender" value="Nam" id="flexRadioDefault1" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        <span class="fa fa-mars" style="font-size:20px"> Nam</span>
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-4">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" ng-model="gender" value="Nữ" id="flexRadioDefault2">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        <span class="fa fa-venus" style="font-size:20px"> Nữ</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-field d-flex align-items-center">
+                <span class="fa fa-calendar"></span>
+                <input type="text" name="birthday" id="date" ng-model="birthday" placeholder="Ngày sinh">
+            </div>
+            <div ng-show="signup.birthday.$invalid" class="text-danger font-italic col-sm-6 ">
+                <span ng-if="signup.birthday.$touched">Nhập sai định dạng!</span>
+                <span ng-if="signup.birthday.$untouched">Vui lòng nhập ngày sinh!</span>
+            </div>
+
+            <div class="row p-2">
+
+                <div class="form-field d-flex align-items-center col-sm-5">
+                    <span class="fa fa-money"></span>
+                    <input type="number" name="schoolfree" min="0" ng-model="schoolfree" id="schoolfree" placeholder="Học phí">
+                </div>
+
+                <div class="col-sm-2"></div>
+
+                <div class="form-field d-flex align-items-center col-sm-5">
+                    <span class="fa fa-hand-pointer-o"></span>
+                    <input type="number" name="marks" min="0" max="10" ng-model="mark" id="marks" placeholder="Điểm">
+                </div>
+
+                <div class="row">
+                    <div ng-show="signup.schoolfree.$invalid" class="text-danger font-italic col-sm-6 ">
+                        <span ng-if="signup.schoolfree.$touched">Nhập sai định dạng!</span>
+                        <span ng-if="signup.schoolfree.$untouched">Vui lòng học phí!</span>
+                    </div>
+                    <div ng-show="signup.marks.$invalid" class="text-danger font-italic col-sm-6 d-flex justify-content-end">
+                        <span ng-if="signup.marks.$touched">Nhập điểm từ 0 đến 10!</span>
+                        <span ng-if="signup.marks.$untouched">Vui lòng điểm!</span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn mt-3" ng-disabled="signup.$invalid" ng-click="signUp()">Đăng ký</button>
+        </form>
+        <div class="text-center fs-6"> <a href="#!forgotpassword">Quên mật khẩu?</a> hoặc <a href="#!signin">Đăng nhập</a> </div>
+    </div>
+</div>

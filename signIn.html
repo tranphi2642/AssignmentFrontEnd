@@ -1,0 +1,28 @@
+<!-- css custom -->
+<link rel="stylesheet" href="css/signIn.css">
+<!-- form signin -->
+<div class="login">
+    <div class="logo"> <img src="images/banner/img_avatar2.png" alt=""> </div>
+    <div class="text-center mt-4 name">Đăng nhập tài khoản </div>
+    <form class="p-3 mt-2" name="signin">
+        <div class="form-field d-flex align-items-center">
+            <span class="fa fa-user"></span>
+            <input type="text" name="username" id="username" ng-model="username" ng-pattern="/^[a-zA-Z0-9-]*$/" placeholder="Tài khoản">
+        </div>
+        <div ng-show="signin.username.$invalid" class="text-danger font-italic ">
+            <span ng-if="signin.username.$touched">Nhập tài khoản sai định dạng!</span>
+            <span ng-if="signin.username.$untouched">Vui lòng nhập tài khoản!</span>
+        </div>
+
+        <div class="form-field d-flex align-items-center">
+            <span class="fa fa-key"></span>
+            <input type="password" name="password" id="password" ng-model="password" placeholder="Mật khẩu">
+        </div>
+        <div ng-show="signin.password.$invalid " class="text-danger font-italic ">
+            <span>Vui lòng nhập mật khẩu!</span>
+        </div>
+
+        <button class="btn mt-3" ng-disabled="signin.$invalid" ng-click="login()">Đăng nhập</button>
+    </form>
+    <div class="text-center fs-6"> <a href="#!forgotpassword">Quên mật khẩu?</a> hoặc <a href="#!signup">Đăng ký</a> </div>
+</div>

@@ -1,0 +1,129 @@
+.u-float-right {
+    float: right;
+}
+
+.u-flex-center {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.u-clearfix:before,
+.u-clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.u-clearfix:after {
+    clear: both;
+}
+
+.u-clearfix {
+    *zoom: 1;
+}
+
+.header-container {
+    position: relative;
+}
+
+.header-image {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: auto;
+}
+
+.header {
+    color: #fff;
+    padding: 15px;
+    height: 300px;
+}
+
+.main-heading {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+.tag {
+    background-color: rgba(255, 255, 255, .35);
+    border-radius: 20px;
+    font-size: 11px;
+    margin-right: 8px;
+    padding: 4px 10px;
+    text-transform: uppercase;
+}
+
+.stats {
+    margin-top: 35px;
+}
+
+.stat-module {
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 20px;
+    text-transform: uppercase;
+}
+
+.stat-number {
+    display: inline-block;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.body {
+    background-color: #eee;
+    color: #555;
+    position: relative;
+}
+
+.body-image {
+    width: 15%;
+    height: 150px;
+    border-radius: 100%;
+    box-shadow: 5px 10px 75px rgba(0, 0, 0, .4);
+    float: left;
+    margin: -90px 0 20px;
+    position: relative;
+    z-index: 2;
+    object-fit: cover;
+}
+
+.body-action-button {
+    background-color: #383838;
+    border-radius: 50%;
+    box-shadow: 1px 2px 12px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    height: 40px;
+    position: absolute;
+    right: 15px;
+    top: -97px;
+    width: 40px;
+}
+
+.body-stats {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    margin: -14px 0 0 30px;
+    position: relative;
+    text-transform: uppercase;
+    width: 20%;
+}
+
+.body-stats>span {
+    display: inline-block;
+    font-weight: 900;
+    margin-top: 8px;
+}
+
+
+/* .profile .card-body img {
+   
+    height: 240px;
+} */

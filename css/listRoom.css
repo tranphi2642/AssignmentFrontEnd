@@ -1,0 +1,40 @@
+.wrapper .card-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.wrapper .card-text {
+    text-align: justify;
+}
+
+.wrapper .modal-header {
+    background-image: linear-gradient(#7FDBFF, white);
+}
+
+.wrapper .modal-footer {
+    background-image: linear-gradient(white, #7FDBFF);
+}
+
+#left-panel-link {
+    position: relative;
+    left: 5%;
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#right-panel-link {
+    position: absolute;
+    right: 10%;
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}

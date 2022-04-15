@@ -1,0 +1,100 @@
+<!-- css custom -->
+<link rel="stylesheet" href="css/editProfile.css">
+<!-- form edit profile -->
+<div class="row mt-2 pt-4 ps-5">
+    <div class="section-header mt-2">
+        <div class="chat-bubble">
+            <span class="title">#cHỈNH SỮA THÔNG TIN </span>
+            <div class="chat-bubble reverse" style="color: #27b995"></div>
+        </div>
+    </div>
+</div>
+<div class="edit">
+    <div class="text-center name">Chỉnh sửa thông tin tài khoản </div>
+    <form class="p-3 " name="edit">
+        <div class="d-flex justify-content-center col-sm-12 ">
+            <img src="images/banner/{{images}}" alt="" ng-show="images" class="img img-responsive " ng-model="img" style="height: 150px; object-fit: cover;">
+        </div>
+        <div class="row">
+            <div class="col-sm-6 mt-3 ">
+                <div class="form-field d-flex align-items-center  mb-4">
+                    <span class="fa fa-user"></span>
+                    <input type="text" name="username" id="username" ng-model="username" value="username" ng-disabled="username" placeholder="Tài khoản" required>
+                </div>
+
+                <div class="form-field d-flex align-items-center  mb-4">
+                    <span class="fa fa-key"></span>
+                    <input type="password" name="password" id="pwd" ng-model="password" value="password" ng-disabled="password" placeholder="Mật khẩu" required>
+                </div>
+
+                <div class="form-field d-flex align-items-center mb-4">
+                    <span class="fa fa-user-circle"></span>
+                    <input type="text" name="fullname" pattern="^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$" id="hoten" ng-model="fullname" value="fullnanme" placeholder="Họ tên"
+                        required>
+                </div>
+                <div ng-show="edit.fullname.$invalid" class="text-danger font-italic  ">
+                    <span ng-if="edit.fullname.$touched">Nhập sai định dạng!</span>
+                    <span ng-if="edit.fullname.$untouched">Vui lòng nhập họ và tên!</span>
+                </div>
+
+                <div class="form-field d-flex align-items-center mb-4">
+                    <span class="fa fa-at"></span>
+                    <input type="email" name="email" id="email" ng-model="email" value="email" placeholder="Email" required>
+                </div>
+                <div ng-show="edit.email.$invalid" class="text-danger font-italic  ">
+                    <span ng-if="edit.email.$touched">Nhập sai định dạng!</span>
+                    <span ng-if="edit.email.$untouched">Vui lòng email!</span>
+                </div>
+            </div>
+
+            <div class="col-sm-6 mt-3">
+                <div class="row p-2 m-1 justify-content-center mb-4">
+                    <div class="form-check col-sm-4 ">
+                        <input class="form-check-input" type="radio" name="nam" id="nam" ng-model="gender" value="Nam">
+                        <label class="form-check-label">
+                            <span class="fa fa-mars" style="font-size:20px"> Nam</span>
+                        </label>
+                    </div>
+                    <div class="form-check col-sm-4">
+                        <input class="form-check-input" type="radio" name="nữ" id="nữ" ng-model="gender" value="Nữ">
+                        <label class="form-check-label">
+                            <span class="fa fa-venus" style="font-size:20px"> Nữ</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-field d-flex align-items-center mt-4 mb-4">
+                    <span class="fa fa-calendar"></span>
+                    <input type="text" name="birthday" id="birthday" placeholder="Ngày sinh" ng-model="birthday" required>
+                </div>
+                <div ng-show="edit.birthday.$invalid" class="text-danger font-italic col-sm-6 ">
+                    <span ng-if="edit.birthday.$touched">Nhập sai định dạng!</span>
+                    <span ng-if="edit.birthday.$untouched">Vui lòng nhập ngày sinh!</span>
+                </div>
+
+                <div class="form-field d-flex align-items-center mb-4">
+                    <span class="fa fa-money"></span>
+                    <input type="number" name="schoolfree" ng-disabled="schoolfree" min="0" id="schoolfree" placeholder="Học phí" value="schoolfree" ng-model="schoolfree" required>
+                </div>
+                <div ng-show="edit.schoolfree.$invalid" class="text-danger font-italic col-sm-6 ">
+                    <span ng-if="edit.schoolfree.$touched">Nhập sai định dạng!</span>
+                    <span ng-if="edit.schoolfree.$untouched">Vui lòng học phí!</span>
+                </div>
+
+                <div class="form-field d-flex align-items-center mb-4">
+                    <span class="fa fa-hand-pointer-o"></span>
+                    <input type="number" name="marks" ng-disabled="mark" min="0" max="10" id="mark" placeholder="Điểm" value="mark" ng-model="mark" required>
+                </div>
+                <div ng-show="edit.marks.$invalid" class="text-danger font-italic col-sm-6 ">
+                    <span ng-if="edit.marks.$touched">Nhập điểm từ 0 đến 10!</span>
+                    <span ng-if="edit.marks.$untouched">Vui lòng điểm!</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="btn mt-3 m-3 " ng-disabled="edit.$invalid" ng-click="update()">Cập nhật</button>
+            <button class="btn mt-3 m-3 bg-dark " ng-click="clear()">Làm mới</button>
+        </div>
+    </form>
+</div>

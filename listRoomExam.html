@@ -1,0 +1,210 @@
+<!-- css custom -->
+<link rel="stylesheet" href="css/listRoom.css">
+<!-- listRoomExam -->
+<section class="wrapper mt-2 listcard">
+    <div class="container">
+        <div class="row" ng-controller="listRoom">
+            <div class="section-header">
+                <div class="chat-bubble">
+                    <span class="title">#TAG PHÒNG THI FRONT-END</span>
+                    <div class="chat-bubble reverse" style="color: #27b995"></div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" ng-repeat="sb in listRoom | filter: Type='Front-end' | limitTo:3:start">
+                <div class="card">
+                    <img class="card-img-top m-5 w-auto" src="https://source.unsplash.com/600x900/?computer,design" alt="Company logo">
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-briefcase" style="font-size:20px;"></i> Môn học: {{sb.Name}}</li>
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-user" style="font-size:20px;"></i> Giảng viên: {{sb.Teacher}}</li>
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-map-marker" style="font-size:20px;"></i> Phòng thi: {{sb.Id}}</li>
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-clock-o" style="font-size:20px;"></i> Time: {{sb.Time/60}} Phút</li>
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-inr" style="font-size:20px;"></i> Người tham gia: {{sb.Views}}</li>
+                        </ul>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a ng-click="checkLogin()" href="#!exam/{{sb.Id}}/{{sb.Name}}/{{sb.Time}}" class="btn btn-dark w-100">Vào thi</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#myModal">
+                                    Chi tiết
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- The Modal -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Mô tả phòng thi online </h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                {{sb.Des}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4 ">
+                <nav aria-label="" class="d-flex justify-content-center">
+                    <ul class="pagination">
+                        <li class="page-item ">
+                            <a class="page-link" ng-click="pre()">Trước</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" ng-click="next()">Tiếp theo</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+        <div class="row" ng-controller="listRoom">
+            <div class="section-header">
+                <div class="chat-bubble">
+                    <span class="title">#TAG PHÒNG THI BACK-END </span>
+                    <div class="chat-bubble reverse" style="color: #27b995"></div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" ng-repeat="sb in listRoom| filter: Type='Back-end' | limitTo:3:start">
+                <div class="card">
+                    <img class="card-img-top m-5 w-auto" src="https://source.unsplash.com/600x900/?computer,design" alt="Company logo">
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-briefcase" style="font-size:20px;"></i> Môn học: {{sb.Name}}</li>
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-user" style="font-size:20px;"></i> Giảng viên: {{sb.Teacher}}</li>
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-map-marker" style="font-size:20px;"></i> Phòng thi: {{sb.Id}}</li>
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-clock-o" style="font-size:20px;"></i> Time: {{sb.Time/60}} Phút</li>
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-inr" style="font-size:20px;"></i> Người tham gia: {{sb.Views}}</li>
+                        </ul>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a ng-click="checkLogin()" href="#!exam/{{sb.Id}}/{{sb.Name}}/{{sb.Time}}" class="btn btn-dark w-100">Vào thi</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#myModal">
+                                    Chi tiết
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- The Modal -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Mô tả phòng thi online </h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                {{sb.Des}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4 ">
+                <nav aria-label="" class="d-flex justify-content-center">
+                    <ul class="pagination">
+                        <li class="page-item ">
+                            <a class="page-link" ng-click="pre()">Trước</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" ng-click="next()">Tiếp theo</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+        <div class="row" ng-controller="listRoom">
+            <div class="section-header">
+                <div class="chat-bubble">
+                    <span class="title">#TAG PHÒNG THI DATA & CÁC PHÒNG THI KHÁC </span>
+                    <div class="chat-bubble reverse" style="color: #27b995"></div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" ng-repeat="sb in listRoom| filter: Type='Order' | limitTo:3:start">
+                <div class="card">
+                    <img class="card-img-top m-5 w-auto" src="https://source.unsplash.com/600x900/?computer,design" alt="Company logo">
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-briefcase" style="font-size:20px;"></i> Môn học: {{sb.Name}}</li>
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-user" style="font-size:20px;"></i> Giảng viên: {{sb.Teacher}}</li>
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-map-marker" style="font-size:20px;"></i> Phòng thi: {{sb.Id}}</li>
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-clock-o" style="font-size:20px;"></i> Time: {{sb.Time/60}} Phút</li>
+                            <li class="list-group-item list-group-item-success"><i class="fa fa-inr" style="font-size:20px;"></i> Người tham gia: {{sb.Views}}</li>
+                        </ul>
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a ng-click="checkLogin()" href="#!exam/{{sb.Id}}/{{sb.Name}}/{{sb.Time}}" class="btn btn-dark w-100">Vào thi</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#myModal">
+                                    Chi tiết
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mt-4 ">
+                <nav aria-label="" class="d-flex justify-content-center">
+                    <ul class="pagination">
+                        <li class="page-item ">
+                            <a class="page-link" ng-click="pre()">Trước</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" ng-click="next()">Tiếp theo</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Mô tả phòng thi online </h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            {{sb.Des}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
